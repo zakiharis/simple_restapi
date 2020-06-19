@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn instance to serve simple_restapi
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/simple_restapi
+Environment="PYTHONPATH=/home/ubuntu/simple_restapi"
+ExecStart=/home/ubuntu/.local/bin/gunicorn --workers 2 --bind localhost:8080 wsgi:gunicorn_app --pid /tmp/simple_restapi_flask.pid --reload
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
