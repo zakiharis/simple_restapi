@@ -40,13 +40,13 @@ pytest tests/
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | 1 | /auth/register | POST | Body -> {"email": "abc@abc.com", "password": "abc12345"} | https://mysimplerestapitest.ml/auth/register | Create a new user |
 | 2 | /auth/login | POST | Body -> {"email": "abc@abc.com", "password": "abc12345"} | https://mysimplerestapitest.ml/auth/login | Login a user and get a JWT token |
-| 3 | /auth/logout | GET | Header -> Authorization: Bearer <JWT Token> | https://mysimplerestapitest.ml/auth/logout | Sign out and blacklist the JWT token |
-| 4 | /auth/refresh | POST | Header -> Authorization: Bearer <JWT Refresh Token> | https://mysimplerestapitest.ml/auth/refresh | Get a new JWT token |
-| 5 | /auth/key | GET | Header -> Authorization: Bearer <JWT Token> | https://mysimplerestapitest.ml/auth/key | Get a public key to encrypt a message |
-| 6 | /auth/decode | POST | Header -> Authorization: Bearer <JWT Token> Body -> {"encrypted_message": "<base64 of the encrypted json>"} | https://mysimplerestapitest.ml/auth/decode | Validate that server is able to decrypt the encrypted message |
-| 7 | /account | GET | Header -> Authorization: Bearer <JWT Token> | https://mysimplerestapitest.ml/account | Get the user account details |
-| 8 | /account | PUT | Header -> Authorization: Bearer <JWT Token> Body -> {"password": "mYn3wp@ssw0rd"} | https://mysimplerestapitest.ml/account | Update the user password |
-| 9 | /account | DELETE | Header -> Authorization: Bearer <JWT Token> | https://mysimplerestapitest.ml/account | Delete the user account |
+| 3 | /auth/logout | GET | Header -> Authorization: Bearer [JWT Token] | https://mysimplerestapitest.ml/auth/logout | Sign out and blacklist the JWT token |
+| 4 | /auth/refresh | POST | Header -> Authorization: Bearer [JWT Refresh Token] | https://mysimplerestapitest.ml/auth/refresh | Get a new JWT token |
+| 5 | /auth/key | GET | Header -> Authorization: Bearer [JWT Token] | https://mysimplerestapitest.ml/auth/key | Get a public key to encrypt a message |
+| 6 | /auth/decode | POST | Header -> Authorization: Bearer [JWT Token] Body -> {"encrypted_message": "[base64 of the encrypted json]"} | https://mysimplerestapitest.ml/auth/decode | Validate that server is able to decrypt the encrypted message |
+| 7 | /account | GET | Header -> Authorization: Bearer [JWT Token] | https://mysimplerestapitest.ml/account | Get the user account details |
+| 8 | /account | PUT | Header -> Authorization: Bearer [JWT Token] Body -> {"password": "mYn3wp@ssw0rd"} | https://mysimplerestapitest.ml/account | Update the user password |
+| 9 | /account | DELETE | Header -> Authorization: Bearer [JWT Token] | https://mysimplerestapitest.ml/account | Delete the user account |
 
 # Testing AES256 encrypted value
 
